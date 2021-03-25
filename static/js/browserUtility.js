@@ -1,6 +1,7 @@
 
 /* browserUtility.js */
 
+/* Allows us to customise the navbar to display the right option*/
 export function customiseNavBar(items) {
 	document.querySelectorAll('nav li').forEach(element => {
 		const link = element.querySelector('a')

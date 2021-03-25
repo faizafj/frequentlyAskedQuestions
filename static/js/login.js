@@ -24,7 +24,7 @@ async function login() {
 		if(response.status === 200) {
 			localStorage.setItem('username', json.data.username)
 			localStorage.setItem('authorization', token)
-			window.location.href = '#foo'
+			window.location.href = '#home' // redirects to homepage
 			showMessage(`you are logged in as ${json.data.username}`)
 		} else {
 			showMessage('invalid username or password')

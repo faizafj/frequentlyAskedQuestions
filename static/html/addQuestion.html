@@ -1,0 +1,55 @@
+
+<figure>
+
+<form action="/addQuestion" method="post" enctype="mulitpart/form-data">
+    <p>
+    <label for="title">The Question Title:</label> <br>   
+    <input type="text" name="title" placeholder="Type your question title here" value="" autofocus required>
+    </p> 
+        <img src="uploads/Image.png" /> <br>    
+    <p>
+    <label for="summary">Summary of the question:</label> <br>   
+    <input type="text" name="summary" placeholder="Provide quick summary of the question" value="" autofocus required>
+    </p>
+
+      <form method="get"> Please describe the question in detail: <br>
+          <label class="description">
+      <textarea name="desciption" rows="10" cols="30" required></textarea>
+          </label>
+    
+<p>
+
+    <input type="file" id="questionImage" name="questionImage" accept="image/*" />
+    <label for="image">Select</label>
+</p>
+   
+       <p>
+        <label for="Topic" required> Pick a topic: <br>
+      <select name="topic">
+        <option value="">--choose--</option>
+        <option value="Maths in Computing">Maths in Computing</option>
+        <option value="Python">Python</option>
+        <option value="C++">C++</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="GitHub">GitHub</option>                   
+      </select>
+    </label>
+    </p>
+    
+    
+       <p>
+        <label for="subtopic" > Pick a subtopic: <br>
+      <select name="subtopic">
+        <option value="">--choose--</option>
+        <option value="Maths in Computing">Maths in Computing</option>
+        <option value="Python">Python</option>
+        <option value="C++">C++</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="GitHub">GitHub</option>                   
+      </select>
+    </label>
+    </p>
+    
+    <p> <input type="submit" value="Add Question"></p>
+</form>
+</figure>

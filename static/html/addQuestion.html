@@ -6,7 +6,13 @@
     <label for="title">The Question Title:</label> <br>   
     <input type="text" name="title" placeholder="Type your question title here" value="" autofocus required>
     </p> 
+    <p>
+        <br>
         <img src="uploads/Image.png" /> <br>    
+        <label for="image">Choose an Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+    </p>   
+    
     <p>
     <label for="summary">Summary of the question:</label> <br>   
     <input type="text" name="summary" placeholder="Provide quick summary of the question" value="" autofocus required>
@@ -14,17 +20,13 @@
 
       <form method="get"> Please describe the question in detail: <br>
           <label class="description">
-      <textarea name="desciption" rows="10" cols="30" required></textarea>
+      <textarea name="description" rows="10" cols="30" required></textarea>
           </label>
     
-<p>
 
-    <input type="file" id="questionImage" name="questionImage" accept="image/*" />
-    <label for="image">Select</label>
-</p>
    
        <p>
-        <label for="Topic" required> Pick a topic: <br>
+        <label for="topic" required> Pick a topic: <br>
       <select name="topic">
         <option value="">--choose--</option>
         <option value="Maths in Computing">Maths in Computing</option>

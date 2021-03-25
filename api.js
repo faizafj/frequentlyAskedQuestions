@@ -40,21 +40,20 @@ router.post('/accounts', async context => {
 	context.response.body = JSON.stringify({ status: 'success', msg: 'account created' })
 })
 
-router.post('/files', async context => {
-	console.log('POST /files')
-	try {
-		const token = context.request.headers.get('Authorization')
-		console.log(`auth: ${token}`)
-		const body  = await context.request.body()
-		const data = await body.value
-		console.log(data)
-		saveFile(data.base64, data.user)
-		context.response.status = 201
-		context.response.body = JSON.stringify({ status: 'success', msg: 'file uploaded' })
-	} catch(err) {
-		context.response.status = 401
-		context.response.body = JSON.stringify({ status: 'unauthorised', msg: err.msg })
-	}
+router.post ('/questions', async context => {
+    console.log('POST /questions')
+    try {
+    const token = context.request.headers.get ('Authorization')
+    if(!token) throw new Error ('missing Authorization header')
+        const credentials = extractCredentials(token)
+        user = await login (credentials)
+    } catch(err) {
+        context.response.status = 401
+        context.response.body = {status: 'unauthorized', msg: 'Basic Authentication required', log: err.message } //returned if there's auth issues
+    } return
+}
+    context.response.status = 201
+    context.response.body = JSON.stringify({foo: 'working'}, null, 2)
 })
 
 router.get("/(.*)", async context => {      

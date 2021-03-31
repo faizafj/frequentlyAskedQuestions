@@ -81,6 +81,7 @@ export function saveFile(base64String, username) {
 	console.log(filename)
 	Base64.fromBase64String(base64Image).toFile(`./static/uploads/${filename}`)
 	console.log('file saved')
+    return filename
 }
 
 export async function getEtag(path) {

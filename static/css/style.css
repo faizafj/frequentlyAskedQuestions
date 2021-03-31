@@ -4,13 +4,20 @@
 body, p, h1, h2, h3, ul {
 	margin: 0;
 	padding: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 p {
 	margin-bottom: 0.6em;
 	font-size: 1em;
 }
+
+header h1 {
+	margin-bottom: 0.5em;
+	font-size: 3em;
+	color: #555;
+}
+
 
 h1 {
 	margin-bottom: 0.5em;
@@ -19,16 +26,16 @@ h1 {
 }
 
 img {
-    width:12em;
-    height:10em; 
+    width: 15em;
+    height: 15em; 
     border: solid black 1px;
 }
 
 header {
 	width: auto;
-	background-color: #CCC;
-	padding: 1em;
+	background-color: #C1666B;
 	padding-bottom: 0.5em;
+    padding: 1em;
 }
 
 header p {
@@ -41,25 +48,37 @@ header strong {
 	color: green;
 }
 
+header h1{
+    text-align: center;
+    color: black;
+
+}
+
 .offline {
 	color: red;
 }
 
 main {
-	padding: 1em;  
+    padding: 0.5em;
+    height: auto;
+    margin: auto;
 }
 
 footer {
-	position: absolute;
+	position: relative;
 	bottom: 0;
-	background-color: #DDD;
-	width: auto;
+	left: 0;
+    background-color: #c1666b;
+	width: 100%;
 	padding: 0;
+	margin: 0;
+	padding-left: 0.3em;
+	padding-top: 0.5em;
 }
 
 input {
 	width: 200px;
-	font-size: 1.2em;
+	font-size: 0.9em;
 }
 
 ul {
@@ -70,8 +89,7 @@ ul {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
-	background-color: #CCCC;
-	/* height: 3em; */
+	background-color: black;
     width: auto;
 	justify-content: flex-start;
 }
@@ -91,15 +109,15 @@ li {
 
 li > a {
 	text-decoration: none;
-	color: black;
-}
-
-li:hover a {
 	color: white;
 }
 
+li:hover a {
+	color: #C1666B;
+}
+
 li:hover {
-	background-color: grey;
+	background-color: white;
 }
 
 aside {
@@ -108,10 +126,10 @@ aside {
 	left: 10vw;
 	width: 72vw;
 	background-color: white;
-	border: 0.1em solid red;
+	border: 0.1em solid #C1666B;
 	padding: 2vw;
 	margin: 2vw;
-	color: red;
+	color: #C1666B;
 	font-size: 1em;
 	border-radius: 0.5em;
 }
@@ -137,13 +155,21 @@ button:hover {
   background-color: white;
 }
 
-input[type="text"], input[type="email"], input[type="password"], textarea, select {
+input[type="text"], input[type="email"], input[type="password"], textarea {
 	font-size: 0.8em;
-	width: 300px;
+    width: 50%;
 	border: 1px solid #CCC;
 	padding: 0.5em;
 	margin-top: 0.3em;
 }
+
+
+select {
+    width: 50%;
+    height: 2em;
+}
+
+
 main > button {
 	position: fixed;
 	z-index: 2;
@@ -204,17 +230,6 @@ article > button {
 	float: right;
 }
 
-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	background-color: #DDDD;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	padding-left: 0.3em;
-	padding-top: 0.5em;
-}
 
 footer > p#device, footer > p#resolution, footer > p#connectivity {
 	display: inline-block;
@@ -260,18 +275,31 @@ footer > p#location {
 
 .currentpage {
 	background-color: white;
-/* 	background-color: #BBB; */
 }
+
+.currentpage {
+	background-color: white;
+}
+
+.currentpage, li:active {
+    background-color: black;
+}
+
 
 /* ======================== DETECTS THE SCREEN WIDTH ======================== */
 
 /* Narrow screen */
-@media (max-width: 400px) {
+@media (min-width: 250px) and (max-width: 401px) {
 	footer > p#resolution {
 		background-image: url(../images/red.png);
 		background-size: contain;
-	}
-}
+	} input[type="text"], input[type="email"], input[type="password"], textarea {
+	font-size: 0.8em;
+    width: 100%;
+	border: 1px solid #CCC;
+	padding: 0.5em;
+	margin-top: 0.3em;
+} }
 
 /* Medium width screen */
 @media (min-width: 401px) and (max-width: 800px) {

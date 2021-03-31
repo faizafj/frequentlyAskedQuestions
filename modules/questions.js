@@ -12,13 +12,20 @@ export async function add(data) {
     if (data.image){
        data.photo = await saveImage(image)
     }
-    console.log(data)
+   delete data.avatar
+   data.questionId = await addQuestionDetails(data)
 }
 
 //Saves image to file
-async function saveImage(data) {
-    console.log('saveImage')
-    console.log(data)
+function saveImage(data) {
     const photoName = saveFile(data.dataURI, data.username)
     return photoName
+}
+
+async function addQuestionDetails (data){
+    let sql = `SELECT id FROM accounts WHERE user = "${data.username}"`
+    console.log(sql)
+    let result = await db.query(sql)
+    data.userid = result[0].id
+    console.log(data)
 }

@@ -12,19 +12,18 @@
         <label for="image">Choose an Image:</label>
         <input type="file" id="image" name="image" accept="image/*" /> 
     </p>   
+  
+      <form method="get"> Brief Summary of the Question: <br>
+          <label class="summary">
+      <textarea name="summary" rows="3" cols="30" maxlength="200" autofocus required></textarea>
+          </label>    
+    <br>
     
-    <p>
-    <label for="summary">Summary of the question:</label> <br>   
-    <input type="text" name="summary" placeholder="Provide quick summary of the question" value="" autofocus required>
-    </p>
-
       <form method="get"> Please describe the question in detail: <br>
           <label class="description">
-      <textarea name="description" rows="10" cols="30" required></textarea>
+      <textarea name="description" rows="10" cols="30" autofocus required></textarea>
           </label>
-    
-
-   
+ 
        <p>
         <label for="topic" required> Pick a topic: <br>
       <select name="topic">

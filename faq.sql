@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `questions` (
 
 CREATE TABLE IF NOT EXISTS `answers` (
   `answerId` mediumint UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `answer` varchar(60),
+  `answer` varchar(200),
   `questionId` mediumint UNSIGNED,
   `userid` mediumint UNSIGNED,
   `dateAnswer` datetime

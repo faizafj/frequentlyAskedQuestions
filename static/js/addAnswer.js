@@ -1,5 +1,5 @@
 
-/* addQuestions.js */
+/* addAnswer.js */
 
 import { customiseNavBar, getURL, showMessage, file2DataURI } from './browserUtility.js'
 
@@ -8,7 +8,7 @@ export async function setup() {
 	const username = localStorage.getItem('username')
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
-	document.querySelector('h1').innerText = 'Add a question'
+	document.querySelector('h1').innerText = 'Answer a Question'
 	const nav = ['home', 'logout']
 	customiseNavBar(nav)
 	document.querySelector('input[type="file"]').addEventListener('change', await displayImage)
@@ -24,8 +24,8 @@ async function displayImage(event) {
     document.querySelector('form img').src = data
    }
 }
-async function addQuestion(event) {
-    console.log('addQuestion')
+async function addAnswer(event) {
+    console.log('addAnswer')
     event.preventDefault()
     const formData = {
         title: event.target.querySelector('input[name="title"]').value,
@@ -43,7 +43,7 @@ async function addQuestion(event) {
     } console.log (formData)
      //post the questions data
     const baseURL = getURL()
-    const url = `${baseURL}/questions`
+    const url = `${baseURL}/answers`
     const options = {
     method:'POST',
     headers: {

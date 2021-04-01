@@ -55,4 +55,6 @@ async function addQuestion(event) {
     const response = await fetch (url, options)
     const json = await response.json()
     console.log(json)
+    window.location.href = '#home' // redirects to homepage
+    showMessage('Your Question Has Been Added')
 } 

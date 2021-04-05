@@ -7,6 +7,7 @@ body, p, h1, h2, h3, ul {
 	font-family: 'Trebuchet MS', sans-serif;
 }
 
+
 p {
 	margin-bottom: 0.6em;
 	font-size: 1em;
@@ -26,7 +27,6 @@ h1 {
 }
 
 img {
-    width: 15em;
     height: 15em; 
     border: solid black 1px;
 }
@@ -109,6 +109,10 @@ li > a {
 	color: white;
 }
 
+a {
+    color: black;
+}
+
 li:hover a {
 	color: #C1666B;
 }
@@ -136,20 +140,24 @@ aside {
 }
 
 button {
-	background-color: grey;
-  border: 2px solid grey;
-  color: white;
+    color: black;
+    background: #C1666B;
+    border: thin solid black;
+    text-decoration: none;
 	padding: 0.5em 1em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-	font-size: 0.8em;
-	margin-top: 0.5em;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+	    font-size: 0.8em;
+	    margin-top: 0.5em;
+    margin-left: 0.5em;
 }
 
+
 button:hover {
-	color: grey;
-  background-color: white;
+        color: #C1666B;
+      background-color: white;
+       border: thin solid black;
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
@@ -166,13 +174,26 @@ select {
     height: 2em;
 }
 
+a:-webkit-any-link {
+    text-decoration: none;
+}
 
 main > button {
-	position: fixed;
-	z-index: 2;
-	bottom: 0.5em;
-	right: 0.5em;
+    color: black;
+    background: #C1666B;
+    border: thin solid black;
+    text-decoration: none;
 }
+
+main > button:hover {
+    color: black;
+    background: white;
+    border: thin solid black;
+    text-decoration: none;
+}
+
+
+
 
 main > section {
 	display: absolute;
@@ -226,6 +247,23 @@ article > button {
 	flex-grow: 1;
 	float: right;
 }
+
+
+table {
+       border-collapse: collapse;
+       border: solid black 1px;
+}
+
+td {
+   border: solid black 1px;
+}
+
+
+table img {
+    height: 15em; 
+    border: none;
+}
+
 
 
 footer > p#device, footer > p#resolution, footer > p#connectivity {
@@ -288,7 +326,7 @@ footer > p#location {
 /* Narrow screen */
 @media (min-width: 250px) and (max-width: 401px) {
 	footer > p#resolution {
-		background-image: url(../images/red.png);
+		/* background-image: url(../images/red.png); */
 		background-size: contain;
 	} input[type="text"], input[type="email"], input[type="password"], textarea {
 	font-size: 0.8em;
@@ -301,7 +339,7 @@ footer > p#location {
 /* Medium width screen */
 @media (min-width: 401px) and (max-width: 800px) {
 	footer > p#resolution {
-		background-image: url(../images/amber.png);
+		/* background-image: url(../images/amber.png); */
 		background-size: contain;
 	}
 }
@@ -309,7 +347,7 @@ footer > p#location {
 /* Wide screen */
 @media (min-width: 801px) {
 	footer > p#resolution {
-		background-image: url(../images/green.png);
+		/* background-image: url(../images/green.png); */
 		background-size: contain;
 	}
 }

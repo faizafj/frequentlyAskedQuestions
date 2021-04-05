@@ -9,7 +9,7 @@ export async function setup() {
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
 	document.querySelector('h1').innerText = 'Add a question'
-	const nav = ['home', 'logout']
+	const nav = ['home', 'addQuestion', 'logout']
 	customiseNavBar(nav)
 	document.querySelector('input[type="file"]').addEventListener('change', await displayImage)
     document.querySelector('form').addEventListener('submit', await addQuestion)
@@ -29,7 +29,7 @@ async function addQuestion(event) {
     event.preventDefault()
     const formData = {
         title: event.target.querySelector('input[name="title"]').value,
-        summary: event.target.querySelector('input[name="summary"]').value,
+        summary: event.target.querySelector('textarea[name="summary"]').value,
         description: event.target.querySelector('textarea[name="description"]').value,
         topic: event.target.querySelector('select[name="topic"]').value,
         subtopic: event.target.querySelector('select[name="subtopic"]').value      

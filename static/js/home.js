@@ -8,7 +8,6 @@ export async function setup() { /* Checks to see if the username has been stored
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
 	document.querySelector('h1').innerText = 'Frequently Asked Questions'
-	const nav = ['logout', 'addQuestion']
+	const nav = ['home','logout', 'addQuestion']
 	customiseNavBar(nav)
-	document.querySelector('form').addEventListener('submit', await uploadData)
 }

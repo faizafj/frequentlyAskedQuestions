@@ -37,12 +37,3 @@ async function addQuestionDetails (data){
     result =  await db.query(sql)
     return result.lastInsertId
 }
-
-// async function addAnswerDetails (data){
- //   console.log(data)
- //   let sql
-  //  sql = `INSERT INTO answers (questionId) \
-  //  VALUES (${data.questionId}` 
- //   console.log (sql)
-  //  await db.query(sql)
-//}

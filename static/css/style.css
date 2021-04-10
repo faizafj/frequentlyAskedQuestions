@@ -4,7 +4,7 @@
 body, p, h1, h2, h3, ul {
 	margin: 0;
 	padding: 0;
-	font-family: 'Trebuchet MS', sans-serif;
+    font-family: "Monaco", monospace;
 }
 
 
@@ -57,14 +57,14 @@ header h1{
 }
 
 main {
-    padding: 0.5em;
+    padding: 1em;
     height: auto;
     margin: auto;
 }
 
 
 body{
-        background: #FBDADA;
+        /*background: #FBDADA;*/
 }
 
 footer {
@@ -79,6 +79,18 @@ footer {
 	padding-top: 0.5em;
     text-align: center;
 }
+
+
+input[type="submit"] {
+    border: solid black 1px;
+    padding: 0.5em;
+}
+
+
+#submitQuestion:hover {
+    border: solid red 1px;
+}
+
 
 
 input {
@@ -145,6 +157,7 @@ aside {
 	display: none;
 }
 
+
 button {
     color: black;
     background: #FBDADA;
@@ -158,6 +171,7 @@ button {
 	margin-top: 0.5em;
     margin-left: 0.5em;
     border-radius: 10px;
+    font-family: "Monaco", monospace;
 }
 
 
@@ -215,6 +229,7 @@ form {
     padding: 2em;
     border-radius: 25px;
     width: auto;
+    box-shadow: 2px 2px 20px 2px gray;
 }
 
 
@@ -290,6 +305,8 @@ article > button {
 }
 
 
+
+
 h2#welcome {
     text-align:right;
     font-size: 1em;
@@ -309,7 +326,6 @@ table img {
     height: 15em; 
     border: none;
 }
-
 
 
 footer > p#device, footer > p#resolution, footer > p#connectivity {

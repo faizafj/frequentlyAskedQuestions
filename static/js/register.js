@@ -5,7 +5,7 @@ import { customiseNavBar, showMessage } from './browserUtility.js'
 
 export async function setup() {
 	document.querySelector('h1').innerText = 'Register a New Account'
-	customiseNavBar(['register', 'login', 'addQuestion'])
+	customiseNavBar(['register', 'login'])
 	document.querySelector('form').addEventListener('submit', await register)
 }
 

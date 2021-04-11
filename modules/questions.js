@@ -34,6 +34,24 @@ async function addQuestionDetails (data){
     "${data.date}", "${data.topic}", "${data.subtopic}")`
     sql =  sql.replaceAll('"undefined"', 'NULL')
     sql = sql.replaceAll('""', 'NULL')
+    console.log (sql)
     result =  await db.query(sql)
     return result.lastInsertId
 }
+
+async function getUserID(username) {
+    const sql = `SELECT id FROM accounts WHERE user = "${username}"`
+    console.log(sql)
+    let result = await db.query(sql)
+    const userid = result[0].id
+    return userid
+}
+
+//gets user id and other needed data
+export async function getAll(username) {
+    const userid = await getUserID(username)
+    const sql = `SELECT title, summary, image, dateCreated FROM questions WHERE userid = ${userid}` //retrieve records
+    const result = await db.query(sql)
+    return result
+}
+

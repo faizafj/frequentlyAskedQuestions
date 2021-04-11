@@ -25,16 +25,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
 );
 
 
-CREATE TABLE `topics` (
-  `subtopic` varchar(30) NOT NULL,
-  `topic` varchar(15) NOT NULL
-);
-
-
-
 ALTER TABLE `questions` ADD FOREIGN KEY (`userid`) REFERENCES `accounts` (`id`);
-
-ALTER TABLE `questions` ADD FOREIGN KEY (`subtopic`, `topic`) REFERENCES `topics` (`subtopic`, `topic`);
 
 ALTER TABLE `answers` ADD FOREIGN KEY (`questionId`) REFERENCES `questions` (`questionId`);
 

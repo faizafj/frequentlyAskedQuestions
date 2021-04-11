@@ -1,4 +1,3 @@
-
 /* login.js */
 
 import { customiseNavBar, showMessage } from './browserUtility.js'
@@ -12,23 +11,23 @@ export async function setup() {
 
 async function login() {
 	event.preventDefault()
-		console.log('form submitted')
-		const token = getToken()
-		const url = '/accounts'
-		const options = {
-			method: 'GET',
-			headers: { 'Authorization': token }
-		}
-		const response = await fetch(url, options)
-		const json = await response.json()
-		if(response.status === 200) {
-			localStorage.setItem('username', json.data.username)
-			localStorage.setItem('authorization', token)
-			window.location.href = '#home' // redirects to homepage
-			showMessage(`you are logged in as ${json.data.username}`)
-		} else {
-			showMessage('invalid username or password')
-			document.querySelector('input[name="pass"]').value = ''
+	console.log('form submitted')
+	const token = getToken()
+	const url = '/accounts'
+	const options = {
+		method: 'GET',
+		headers: { 'Authorization': token }
+	}
+	const response = await fetch(url, options)
+	const json = await response.json()
+	if(response.status === 200) {
+		localStorage.setItem('username', json.data.username)
+		localStorage.setItem('Authorization', token)
+		window.location.href = '#home'
+		showMessage(`you are logged in as ${json.data.username}`)
+	} else {
+		showMessage('invalid username or password')
+		document.querySelector('input[name="pass"]').value = ''
 		}
 }
 

@@ -16,7 +16,9 @@ export async function login(credentials) {
 	records = await db.query(sql)
 	const valid = await compare(pass, records[0].pass)
 	if(valid === false) throw new Error(`invalid password for account "${user}"`)
-	return user
+    sql = `SELECT id AS userid, user AS username FROM accounts WHERE user="${user}";`
+    records = await db.query(sql)
+	return records[0]
 }
 
 export async function register(credentials) {

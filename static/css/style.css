@@ -81,16 +81,6 @@ footer {
 }
 
 
-input[type="submit"] {
-    border: solid black 1px;
-    padding: 0.5em;
-}
-
-
-#submitQuestion:hover {
-    border: solid red 1px;
-}
-
 
 
 input {
@@ -146,11 +136,12 @@ aside {
 	width: 72vw;
 	background-color: white;
 	border: 0.1em solid #C1666B;
-	padding: 2vw;
+	padding: 1em;
 	margin: 2vw;
 	color: #C1666B;
 	font-size: 1em;
 	border-radius: 0.5em;
+    text-align: center;
 }
 
 .hidden {
@@ -314,7 +305,7 @@ h2#welcome {
 
 table {
        border-collapse: collapse;
-       border: solid black 1px;
+    text-align: center;
 }
 
 td {

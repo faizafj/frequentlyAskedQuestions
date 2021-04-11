@@ -4,17 +4,18 @@
 import { customiseNavBar, getURL, showMessage, file2DataURI } from './browserUtility.js'
 
 export async function setup() {
-	console.log('FOO')
+	console.log('addQuestions')
 	const username = localStorage.getItem('username')
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
 	document.querySelector('h1').innerText = 'Add a question'
-	const nav = ['home', 'addQuestion', 'logout']
+	const nav = ['home',  'questions' , 'addQuestion', 'logout']
 	customiseNavBar(nav)
 	document.querySelector('input[type="file"]').addEventListener('change', await displayImage)
     document.querySelector('form').addEventListener('submit', await addQuestion)
 }
 
+//displays image 
 async function displayImage(event) {
     console.log('displayImage')
     const files = event.target.files
@@ -34,6 +35,7 @@ async function addQuestion(event) {
         topic: event.target.querySelector('select[name="topic"]').value,
         subtopic: event.target.querySelector('select[name="subtopic"]').value      
     }
+    console.log(formData)
     const image = event.target.querySelector('input[name="image"]')
     const files = image.files
     if (files[0]) {
@@ -48,7 +50,7 @@ async function addQuestion(event) {
     method:'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('authorization')
+        'Authorization': localStorage.getItem('Authorization')
     },
         body: JSON.stringify(formData)
    } 

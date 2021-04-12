@@ -25,6 +25,10 @@ async function register() {
 	const response = await fetch(url, options)
 	const json = await response.json()
 	console.log(json)
-	showMessage('new account created')
+     if (response.status===400){
+		showMessage('Username already exists')
+	} else{
+		showMessage('Account Added')
+	}
 	window.location.href = '#login'
 }

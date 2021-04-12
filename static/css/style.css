@@ -308,8 +308,16 @@ table {
     text-align: center;
 }
 
+
+table img {
+    width: 15em;
+    height: 10em;
+    
+}
 td {
    border: solid black 1px;
+   padding: 1em;
+   
 }
 
 

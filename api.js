@@ -21,7 +21,8 @@ router.get('/accounts', async context => {
 	try {
 		const credentials = extractCredentials(token)
 		console.log(credentials)
-		const username = await login(credentials)
+		const details = await login(credentials)
+        const username = details.username
 		console.log(`username: ${username}`)
 		context.response.body = JSON.stringify({status: 'success', data: { username } }, null, 2)
 	} catch(err) {
@@ -35,9 +36,14 @@ router.post('/accounts', async context => {
 	const body  = await context.request.body()
 	const data = await body.value
 	console.log(data)
-	await register(data)
-	context.response.status = 201
-	context.response.body = JSON.stringify({ status: 'success', msg: 'account created'})
+	try{
+		await register(data)
+		context.response.status = 201
+		context.response.body = JSON.stringify({ status: 'success', msg: 'account created' })
+	} catch(err){
+		context.response.status = 400
+		context.response.body = JSON.stringify({ status: 'unsuccessful', msg: err.msg })
+	}
 })
 
 
@@ -48,7 +54,9 @@ router.post ('/questions', async context => {
     const token = context.request.headers.get ('Authorization')
     if(!token) throw new Error ('missing Authorization header')
         const credentials = extractCredentials(token)
-        user = await login (credentials)
+        const details = await login (credentials)
+        console.log(details)
+        user = details.username
     } catch(err) {
         context.response.status = 401
         context.response.body = { status: 'unauthorised', msg: 'Basic Authentication required', log: err.message } //returned if there's auth issues

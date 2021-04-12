@@ -24,8 +24,14 @@ export async function login(credentials) {
 export async function register(credentials) {
 	let sql, records
 	credentials.pass = await hash(credentials.pass, salt)
+	sql = `SELECT count(id) AS count FROM accounts WHERE user="${credentials.user}";`
+	records = await db.query(sql)
+	console.log(records[0].count)
+	if(records[0].count) throw new Error(`username already exists`)
 	sql = `INSERT INTO accounts(user, pass) VALUES("${credentials.user}", "${credentials.pass}")`
 	console.log(sql)
 	records = await db.query(sql)
 	return true
 }
+
+

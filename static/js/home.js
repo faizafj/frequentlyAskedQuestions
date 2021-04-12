@@ -43,5 +43,5 @@ async function showQuestions(username){
         content += `<tr></td><td>${question.title}</td> <br> <td><img src="/uploads/${img}" /> <td>${question.summary}</td> <td>${dateString}</td> </tr>`
     })
     
-    document.querySelector('main > table').innerHTML = content
+    document.querySelector('figure > table').innerHTML = content
 }

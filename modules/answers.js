@@ -24,8 +24,6 @@ function saveImage(data) {
 }
 
 async function addQuestionDetails (data){
-    console.log('HELLO')
-    console.log(data)
     let sql = `SELECT id FROM accounts WHERE user = "${data.user}"`
     let result = await db.query(sql)
     data.userid = result[0].id
@@ -39,6 +37,7 @@ async function addQuestionDetails (data){
     console.log (sql)
     result =  await db.query(sql)
     return result.lastInsertId
+    //insert answers into answers table selects it by the questions id where question = ....{}
 }
 
 async function getUserID(username) {

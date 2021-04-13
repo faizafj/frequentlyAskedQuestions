@@ -41,6 +41,17 @@ async function addQuestionDetails (data){
     return result.lastInsertId
 }
 
+
+//gets user id and other needed data
+export async function getAll(username) {
+    const userid = await getUserID(username)
+    const sql = `SELECT title, summary, image, dateCreated, questionId, userid FROM questions WHERE userid = ${userid}` //retrieve records
+    const result = await db.query(sql)
+    console.log('Helllo!!!!!!!!!!!!!!!!!!!!!!!!')
+    console.log(result)
+    return result
+}
+
 async function getUserID(username) {
     const sql = `SELECT id FROM accounts WHERE user = "${username}"`
     console.log(sql)
@@ -49,11 +60,8 @@ async function getUserID(username) {
     return userid
 }
 
-//gets user id and other needed data
-export async function getAll(username) {
-    const userid = await getUserID(username)
-    const sql = `SELECT title, summary, image, dateCreated FROM questions WHERE userid = ${userid}` //retrieve records
+export async function getDetails (questionId){
+    const sql = `SELECT title, summary, image, dateCreated, description, userid FROM questions WHERE questionId = ${questionId}`
     const result = await db.query(sql)
     return result
 }
-

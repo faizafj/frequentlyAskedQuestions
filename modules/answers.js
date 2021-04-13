@@ -51,7 +51,7 @@ async function getUserID(username) {
 //gets user id and other needed data
 export async function getAll(username) {
     const userid = await getUserID(username)
-    const sql = `SELECT title, summary, image, dateCreated FROM questions WHERE userid = ${userid}` //retrieve records
+    const sql = `SELECT title, summary, image, description, dateCreated FROM questions WHERE userid = ${userid}` //retrieve records
     const result = await db.query(sql)
     return result
 }

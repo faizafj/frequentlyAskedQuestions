@@ -9,7 +9,7 @@ export async function setup() {
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
 	document.querySelector('h1').innerText = 'Add a question'
-	const nav = ['home',  'questions' , 'addQuestion', 'logout']
+	const nav = ['home', 'addQuestion', 'logout']
 	customiseNavBar(nav)
 	document.querySelector('input[type="file"]').addEventListener('change', await displayImage)
     document.querySelector('form').addEventListener('submit', await addQuestion)

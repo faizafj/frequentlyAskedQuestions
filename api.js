@@ -4,7 +4,7 @@
 import { Router } from 'https://deno.land/x/oak@v6.3.2/mod.ts'
 import { extractCredentials, saveFile } from './modules/util.js'
 import { login, register } from './modules/accounts.js'
-import { add, getAll} from './modules/questions.js'
+import { add, getAll, getDetails} from './modules/questions.js'
 
 const router = new Router()
 
@@ -86,6 +86,33 @@ router.get ('/questions', async context => {
         const token = context.request.headers.get ('Authorization')
         if(!token) throw new Error ('Missing authorisation header')
         const credentials = extractCredentials(token)
+        console.log('Hello')
+        console.log(credentials)
+        const details = await login(credentials) //return username
+        user = details.username
+    } catch(err) {
+        context.response.status = 401
+        context.response.body = { status: 'unauthorised', msg: 'Basic Authentication required', log: err.message } //returned if there's auth issues
+        return
+    }
+  try { 
+        console.log(user)
+        const questions = await getAll(user)
+        context.response.status = 200
+        context.response.body = { status: 'success', data: questions }
+    } catch(err){
+        console.log(err)
+}
+})
+
+
+router.get ('/questions/:id', async context => {
+    console.log('GET /questions')
+    let user = null //set null to run try/catch
+    try {
+        const token = context.request.headers.get ('Authorization')
+        if(!token) throw new Error ('Missing authorisation header')
+        const credentials = extractCredentials(token)
         user = await login(credentials) //return username
     } catch(err) {
         context.response.status = 401
@@ -94,14 +121,13 @@ router.get ('/questions', async context => {
     }
   try { 
         console.log(user)
-        const questions = await getAll(user.username)
+        const questions = await getDetails(context.params.id)
         context.response.status = 200
         context.response.body = { status: 'success', data: questions }
     } catch(err){
         console.log(err)
 }
 })
-
 
 router.post ('/files', async context => {
     console.log('POST /files')

@@ -64,7 +64,7 @@ main {
 
 
 body{
-        /*background: #FBDADA;*/
+     background: white;
 }
 
 footer {
@@ -193,7 +193,7 @@ textarea {
 select {
     width: 50%;
     height: 2em;
-       border-radius: 10px;
+    border-radius: 10px;
 }
 
 a:-webkit-any-link {
@@ -305,7 +305,7 @@ h2#welcome {
 
 table {
        border-collapse: collapse;
-    text-align: center;
+       
 }
 
 
@@ -326,6 +326,57 @@ table img {
     border: none;
 }
 
+tr#DateName {
+    color: grey;
+    text-align: left;
+    font-size: 0.5em;
+    background: lightpink;
+}
+
+tr#questionInfo {
+    text-align: left;
+}
+
+tr#titleName {
+    font-size: 1.2em;
+    
+}
+
+table#details{
+     border: none;  
+    padding: 3em;
+    
+}
+
+
+table#questionsTable {
+    border-radius: 15px;
+    border-spacing: 1em;
+    border-collapse: separate;
+}
+table#questionsTable td {
+    border: none;
+    border-radius: 15px;
+      padding-left: 3em;
+    padding-right: 3em;
+    
+} 
+
+table#questionsTable tr {
+    border: 1px black solid;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px 2px gray;
+    
+} 
+
+table#questionsTable img {
+    border: 1px black solid;
+    margin: 0.5em;
+} 
+a#qDetails {
+    border: solid black 1px;
+    background: red;
+}
 
 footer > p#device, footer > p#resolution, footer > p#connectivity {
 	display: inline-block;

@@ -8,7 +8,7 @@ export async function setup() { /* Checks to see if the username has been stored
 	console.log(`username: ${username}`)
 	if(username === null) window.location.href = '#login'
 	document.querySelector('h1').innerText = 'Frequently Asked Questions'
-	const nav = ['home','logout', 'questions' , 'addQuestion']
+	const nav = ['home','logout','addQuestion']
 	customiseNavBar(nav)
     var d = new Date();
     var dates =  d.getHours()
@@ -40,7 +40,11 @@ async function showQuestions(username){
         const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-        content += `<tr></td><td>${question.title}</td> <br> <td><img src="/uploads/${img}" /> <td>${question.summary}</td> <td>${dateString}</td> </tr>`
+        content += `<tr> <td> <center> <img src="/uploads/${img}" /> </center> <br>
+        Title: ${question.title}  
+        <br> Summary: ${question.summary} 
+            <center> <a href=/#details-id=${question.questionId} id="qDetails"> Click to view Question </a> </center> 
+            <br>  Date Posted: ${dateString} Posted By: ${question.userid} </td> </tr>`
     })
     
     document.querySelector('figure > table').innerHTML = content

@@ -25,7 +25,7 @@ async function router() {
 		console.log(`trying to load script: ${script}`)
 		const module = await import(script)
 		console.log(`script found for "${requestedPage}" route`)
-		module.setup(requestedPage)
+		module.setup(requestedPage, querystring)
 	} catch(err) {
 		console.warn(`no script for "${requestedPage}" route`)
 	}

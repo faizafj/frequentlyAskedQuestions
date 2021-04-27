@@ -16,14 +16,24 @@ export async function login(credentials) {
 	records = await db.query(sql)
 	const valid = await compare(pass, records[0].pass)
 	if(valid === false) throw new Error(`invalid password for account "${user}"`)
-	return user
+    sql = `SELECT id AS userid, user AS username FROM accounts WHERE user="${user}";`
+    console.log (sql)
+    records = await db.query(sql)
+	return records[0]
 }
+
 
 export async function register(credentials) {
 	let sql, records
 	credentials.pass = await hash(credentials.pass, salt)
+	sql = `SELECT count(id) AS count FROM accounts WHERE user="${credentials.user}";`
+	records = await db.query(sql)
+	console.log(records[0].count)
+	if(records[0].count) throw new Error(`username already exists`)
 	sql = `INSERT INTO accounts(user, pass) VALUES("${credentials.user}", "${credentials.pass}")`
 	console.log(sql)
 	records = await db.query(sql)
 	return true
 }
+
+

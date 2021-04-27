@@ -8,7 +8,7 @@ import { login } from "./modules/accounts.js";
 
 import router from "./api.js";
 
-const port = 8080;
+const port = parseInt(Deno.env.get('PORT') ?? '8080');
 
 const app = new Application();
 

@@ -246,7 +246,7 @@ main > button:hover {
 }
 
 form {
-    background: #55847D ;
+    background: #A7EEE4 ;
     padding: 2em;
     width: auto;
     text-align: left;
@@ -442,7 +442,7 @@ footer > p#location {
 /* ======================== DETECTS THE SCREEN WIDTH ======================== */
 
 /* Narrow screen */
-@media (min-width: 250px) and (max-width: 401px) {
+@media (min-width: 250px) and (max-width: 400px) {
     
 footer > p#resolution {
 		/* background-image: url(../images/red.png); */
@@ -457,6 +457,12 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 	margin-top: 0.3em;
 } 
 
+      
+textarea {
+        width: 70%;
+}  
+    
+    
 img {
     height: auto;
     max-width: 50%;
@@ -503,7 +509,7 @@ nav > ul {
 }
  
 article > section {
-  background-color: lightblue;
+  background-color: white;
   text-align: left;
   padding: 0.5em;
   font-size: 1em;
@@ -528,7 +534,7 @@ footer > p#resolution {
     background-size: contain;
 }
     
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"] {
 	font-size: 1em;
     width: 90%;
 	border: 1px solid black ;
@@ -536,6 +542,12 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 	margin-top: 0.3em;
 }
 
+    
+textarea {
+        width: 70%;
+}
+    
+    
 header {
 	width: auto;
 	background-color: #A7EEE4;

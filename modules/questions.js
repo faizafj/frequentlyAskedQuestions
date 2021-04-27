@@ -14,7 +14,6 @@ export async function add(data) {
     }
    delete data.avatar
    data.questionId = await addQuestionDetails(data)
-    console.log('this is data:')
    console.log(data)
 }
 
@@ -44,11 +43,9 @@ async function addQuestionDetails(data){
 
 
 //gets user id and other needed data
-export async function getAll(username) {
-    const userid = await getUserID(username)
-    const sql = `SELECT title, summary, image, dateCreated, questionId, userid FROM questions` //retrieve records
+export async function getAll() {
+    const sql = `SELECT questions.title, questions.summary, questions.image, questions.dateCreated, questions.questionId, questions.userid, accounts.user FROM questions JOIN accounts ON questions.userid = accounts.id` //retrieve records
     const result = await db.query(sql)
-    console.log('Helllo!!!!!!!!!!!!!!!!!!!!!!!!')
     console.log(result)
     return result
 }
@@ -59,7 +56,6 @@ async function getUserID(username) {
     console.log(sql)
     let result = await db.query(sql)
     const userid = result[0].id
-    console.log('Hellloooo')
     console.log (userid)
     return userid
 }

@@ -81,24 +81,8 @@ router.post ('/questions', async context => {
 //get questions
 router.get ('/questions', async context => {
     console.log('GET /questions')
-    let user = null //set null to run try/catch
-    try {
-        const token = context.request.headers.get ('Authorization')
-        if(!token) throw new Error ('Missing authorisation header')
-        console.log('Token here:')
-        console.log(token)
-        const credentials = extractCredentials(token)
-        console.log(credentials)
-        const details = await login(credentials) //return username
-        user = details.username
-    } catch(err) {
-        context.response.status = 401
-        context.response.body = { status: 'unauthorised', msg: 'Basic Authentication required', log: err.message } //returned if there's auth issues
-        return
-    }
   try { 
-        console.log(user)
-        const questions = await getAll(user)
+        const questions = await getAll()
         context.response.status = 200
         context.response.body = { status: 'success', data: questions }
     } catch(err){

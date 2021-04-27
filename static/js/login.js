@@ -5,7 +5,7 @@ import { customiseNavBar, showMessage } from './browserUtility.js'
 export async function setup() {
 	console.log('LOGIN: setup')
 	document.querySelector('h1').innerText = 'Login'
-	customiseNavBar(['register', 'login'])
+	customiseNavBar(['allQuestions','register', 'login'])
 	document.querySelector('form').addEventListener('submit', await login)
 }
 

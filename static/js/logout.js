@@ -8,6 +8,6 @@ export async function setup() {
     showMessage('You have successfully logged out - Goodbye!')
 	localStorage.removeItem('username')
 	localStorage.removeItem('authorization')
-	window.location.href = '#login'
+	window.location.href = '#allQuestions'
     
 }

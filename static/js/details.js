@@ -11,6 +11,9 @@ export async function setup(route, querystring) { /* Checks to see if the userna
 	const nav = ['home','logout', 'addQuestion']
 	customiseNavBar(nav)
    await showQuestions (username, querystring)
+    document.body.style.backgroundImage = "url('uploads/backgroundDesign.png')"
+    document.body.style.backgroundSize = "50%"
+    
 }
 
 
@@ -32,15 +35,15 @@ async function showQuestions(username, querystring){
     const conv = new showdown.Converter()
     json.data.forEach(question => {
         let descriptionFormat = conv.makeHtml(question.description)
-        descriptionFormat = descriptionFormat.replace(/^<p>|<\/p><ul>|<\/ul>$/g,  '') 
+        descriptionFormat = descriptionFormat.replace(/^<p>|<\/p>$/g,  '') 
         const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-        content += ` <center> <tr id="titleName"></td><td> Question: ${question.title}</td> </tr>
-        <tr> <br> <td><img src="/uploads/${img}" /> </tr>
-        <tr id= "questionInfo"> <td>${descriptionFormat} </td> </tr> 
-        <tr id="DateName"> <td> Date Posted: ${dateString}  <br> Posted By:${username}</td></tr> </center>`
+        content += ` <article id="details"> <section> Question: ${question.title}</section> 
+        <section id= "1"> <center> <img src="/uploads/${img}" /> </center> </section>
+        <section id="2"> ${descriptionFormat} </section> 
+        <section id="3"> Date Posted: ${dateString}  <br> Posted By: ${question.user}</section> </article>`
     })
     
-    document.querySelector('main > table').innerHTML = content
+    document.querySelector('main > article').innerHTML = content
 }

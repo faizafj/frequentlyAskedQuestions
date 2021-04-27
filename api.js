@@ -85,8 +85,9 @@ router.get ('/questions', async context => {
     try {
         const token = context.request.headers.get ('Authorization')
         if(!token) throw new Error ('Missing authorisation header')
+        console.log('Token here:')
+        console.log(token)
         const credentials = extractCredentials(token)
-        console.log('Hello')
         console.log(credentials)
         const details = await login(credentials) //return username
         user = details.username

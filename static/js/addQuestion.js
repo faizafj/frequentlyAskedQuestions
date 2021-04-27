@@ -13,6 +13,9 @@ export async function setup() {
 	customiseNavBar(nav)
 	document.querySelector('input[type="file"]').addEventListener('change', await displayImage)
     document.querySelector('form').addEventListener('submit', await addQuestion)
+        document.body.style.backgroundImage = "url('uploads/backgroundDesign.png')"
+    document.body.style.backgroundSize = "50%"
+    
 }
 
 //displays image 
@@ -50,7 +53,7 @@ async function addQuestion(event) {
     method:'POST',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': localStorage.getItem('Authorization')
+        'Authorization': localStorage.getItem('authorization')
     },
         body: JSON.stringify(formData)
    } 

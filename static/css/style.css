@@ -4,19 +4,30 @@
 body, p, h1, h2, h3, ul {
 	margin: 0;
 	padding: 0;
-    font-family: "Monaco", monospace;
+    font-family: Arial, sans-serif;
+    color: black;
 }
 
+
+input#submitQuestion {
+    width: 10em;
+    background: white;
+    border: 1px solid black;
+    padding: 1em;
+    
+}
 
 p {
 	margin-bottom: 0.6em;
 	font-size: 1em;
 }
 
+
 header h1 {
-	margin-bottom: 0.5em;
-	font-size: 3em;
-	color: #555;
+	font-size: 4em;
+	color: black;
+    text-decoration: none;
+    margin: 0.5em;
 }
 
 
@@ -33,15 +44,16 @@ img {
 
 header {
 	width: auto;
-	background-color: #C1666B;
-    padding: 1em;
+	background-color: #A7EEE4;
     height: 4em;
+    padding: 1em;  
 }
 
-header p {
+
+header > p {
 	font-size: 0.9em;
-	color: #555;
-	margin: 0.2em;
+    text-align: right;
+    color: black;
 }
 
 
@@ -52,40 +64,59 @@ header h1{
 
 }
 
+header > img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: static;
+    }
+
+
 .offline {
 	color: red;
 }
 
 main {
-    padding: 1em;
     height: auto;
     margin: auto;
+    width: auto;
+    padding: 1em;
 }
 
 
 body{
-     background: white;
+     /* background-color: #DBF0ED*/
+   /* padding: 1em;*/
 }
 
+
+nav > ul {
+     height: 2.5em;
+     font-size: 1.5em;
+    
+}
+
+fieldset {
+    border: solid black thin;
+    border-radius: 25px;
+    
+}
 footer {
-	position: relative;
+	position: static;
 	bottom: 0;
 	left: 0;
-    background-color: #c1666b;
+    background-color: #55847D;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	padding-left: 0.3em;
-	padding-top: 0.5em;
     text-align: center;
 }
 
 
-
-
 input {
 	width: auto;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 ul {
@@ -98,7 +129,7 @@ ul {
 	align-items: center;
 	background-color: black;
     width: auto;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 li {
@@ -112,6 +143,10 @@ li {
 	font-size: 0.8em;
 }
 
+nav {
+        width: auto;
+}
+
 li > a {
 	text-decoration: none;
 	color: white;
@@ -122,11 +157,11 @@ a {
 }
 
 li:hover a {
-	color: #C1666B;
+	color: white;
 }
 
 li:hover {
-	background-color: white;
+	background-color: #A7EEE4;
 }
 
 aside {
@@ -135,12 +170,11 @@ aside {
 	left: 10vw;
 	width: 72vw;
 	background-color: white;
-	border: 0.1em solid #C1666B;
+	border: 0.1em solid black;
 	padding: 1em;
 	margin: 2vw;
-	color: #C1666B;
+	color: black;
 	font-size: 1em;
-	border-radius: 0.5em;
     text-align: center;
 }
 
@@ -150,50 +184,47 @@ aside {
 
 
 button {
-    color: black;
-    background: #FBDADA;
-    border: thin solid black;
+    color: white;
+    background: black ;
+    border: none;
     text-decoration: none;
-	padding: 0.5em 1em;
+	padding: 1em 3em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
 	font-size: 0.8em;
 	margin-top: 0.5em;
     margin-left: 0.5em;
-    border-radius: 10px;
-    font-family: "Monaco", monospace;
+    font-family: Arial, sans-serif;
+
 }
 
 
 button:hover {
-        color: #C1666B;
-      background-color: white;
-       border: thin solid black;
+      color: #A7EEE4;
+      background-color: black;
+      border: none;
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
-	font-size: 0.8em;
+	font-size: 1em;
     width: 60%;
 	border: 1px solid black;
 	padding: 0.5em;
 	margin-top: 0.3em;
-    border-radius: 10px;
 }
 
 textarea {
-	font-size: 0.8em;
+	font-size: 1em;
     width: 100%;
 	border: 1px solid black;
 	padding: 0.5em;
 	margin-top: 0.3em;
-   border-radius: 10px;
 }
 
 select {
     width: 50%;
     height: 2em;
-    border-radius: 10px;
 }
 
 a:-webkit-any-link {
@@ -201,52 +232,33 @@ a:-webkit-any-link {
 }
 
 main > button {
-    color: black;
-    background: #C1666B;
-    border: thin solid black;
+    color: #A7EEE4;
+    background: black;
+    border: none;
     text-decoration: none;
 }
 
 main > button:hover {
-    color: black;
-    background: white;
-    border: thin solid black;
+    color: white; ;
+    background: black;
+    border: none;
     text-decoration: none;
 }
 
-
 form {
-    background: #C1666B;
+    background: #55847D ;
     padding: 2em;
-    border-radius: 25px;
-    width: auto;
-    box-shadow: 2px 2px 20px 2px gray;
-}
-
-
-form#login {
-    margin: 10%;
-    background: #C1666B;
-    padding: 2em;
-    border-radius: 25px;
     width: auto;
     text-align: left;
-}
-
-form#register {
-    margin: 10%;
-    background: #C1666B;
-    padding: 2em;
-    border-radius: 25px;
-    width: auto;
-    text-align: left;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 main > section {
 	display: absolute;
 	top: 15em;
 	width: 315px;
-	border: 2px solid #CCC;
+	border: none;
 	padding: 1em;
 	padding-bottom: 3em;
 	margin: auto;
@@ -261,28 +273,36 @@ main > section button {
 	float: right;
 }
 
+
+
 article {
-	background-color: #CCCC;
+	background-color: #A7EEE4;
 	margin-bottom: 0.5em;
-	padding: 1em;
-	padding-bottom: 3em;
+	padding: 0.5em;
+    text-align: left;
+    margin: 2em;
 }
 
-article > h2 {
-	margin: 0;
-	padding: 0;
-	/* display: inline-block; */
-	font-size: 1.2em;
-	/* background-color: blue; */
-	height: 2em;
+article img {
+    width: 15em;
+    height: auto;
+}
+
+article  h2 {
+	font-size: 1.3em;
 	flex-grow: 1;
+    text-align: center!important;
+}
+
+article h1 {
+    text-align: center!important;
+     color: black;
+    font-size: 1.5em;
 }
 
 article > p {
 	margin: 0;
 	padding: 0;
-	/* display: inline-block; */
-	/* background-color: yellow; */
 	height: 2em;
 	flex-grow: 2;
 }
@@ -295,8 +315,35 @@ article > button {
 	float: right;
 }
 
+article#details {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 10px;
+}
 
 
+article > section {
+  background-color: white;
+  text-align: left;
+  padding: 1em;
+  font-size: 1em;
+}
+
+
+article > img{
+  align-items: center;
+
+}
+
+section > p {
+    color: grey;
+    font-size: 11px;
+}
+
+section > img {
+    text-align:center;
+     display:block;
+}
 
 h2#welcome {
     text-align:right;
@@ -304,8 +351,7 @@ h2#welcome {
 }
 
 table {
-       border-collapse: collapse;
-       
+   border-collapse: collapse;   
 }
 
 
@@ -315,67 +361,30 @@ table img {
     
 }
 td {
-   border: solid black 1px;
+  border: none;
    padding: 1em;
    
 }
 
 
-table img {
-    height: 15em; 
-    border: none;
-}
-
-tr#DateName {
-    color: grey;
-    text-align: left;
-    font-size: 0.5em;
-    background: lightpink;
-}
-
-tr#questionInfo {
-    text-align: left;
-}
-
-tr#titleName {
-    font-size: 1.2em;
-    
-}
-
-table#details{
-     border: none;  
-    padding: 3em;
-    
-}
-
-
-table#questionsTable {
-    border-radius: 15px;
-    border-spacing: 1em;
-    border-collapse: separate;
-}
-table#questionsTable td {
-    border: none;
-    border-radius: 15px;
-      padding-left: 3em;
-    padding-right: 3em;
-    
-} 
-
-table#questionsTable tr {
-    border: 1px black solid;
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px 2px gray;
-    
-} 
-
-table#questionsTable img {
-    border: 1px black solid;
-    margin: 0.5em;
-} 
 a#qDetails {
-    border: solid black 1px;
-    background: red;
+   border: none;
+    color: white;
+    background: black;
+    padding:1em;
+}
+
+a#qDetails:hover {
+    border: none;
+    background: black;
+    color: #A7EEE4;
+    padding:1em;
+}
+
+
+p#dateUser {
+    color: grey;
+    font-size: 0.8em;
 }
 
 footer > p#device, footer > p#resolution, footer > p#connectivity {
@@ -422,10 +431,7 @@ footer > p#location {
 
 .currentpage {
 	background-color: white;
-}
-
-.currentpage {
-	background-color: white;
+    padding: none;
 }
 
 .currentpage, li:active {
@@ -437,10 +443,13 @@ footer > p#location {
 
 /* Narrow screen */
 @media (min-width: 250px) and (max-width: 401px) {
-	footer > p#resolution {
+    
+footer > p#resolution {
 		/* background-image: url(../images/red.png); */
 		background-size: contain;
-	} input[type="text"], input[type="email"], input[type="password"], textarea {
+} 
+    
+input[type="text"], input[type="email"], input[type="password"], textarea {
 	font-size: 0.5em;
     width: 90%;
 	border: 1px solid black ;
@@ -448,26 +457,118 @@ footer > p#location {
 	margin-top: 0.3em;
 } 
 
-
-   img {
-    height: 15em;
-    width: 100%;
+img {
+    height: auto;
+    max-width: 50%;
     border: solid black 1px;
 }
 
+header {
+	width: auto;
+	background-color: #A7EEE4;
+    height: 2em;
+    padding: 1em;  
+}    
+  
+header h1 {
+    text-align: center;
+    color: black;
+    font-size: 1em;
+}
+    
+table#questionsTable{
+        width: auto;
+        font-size: 0.5em; 
+}
+    
+table#questionsTable td {
+    border: none;
+    padding:none;
+}
+    
+figure {
+        width: 100%;
+}
+    
+form {
+    background: #A7EEE4;
+    padding: 2em;
+    width: auto;
+    font-size: 0.8em;
+}
+
+nav > ul {
+    height: 2.5em;
+    font-size: 1em;
+}
+ 
+article > section {
+  background-color: lightblue;
+  text-align: left;
+  padding: 0.5em;
+  font-size: 1em;
+}
+    
+ article {
+	background-color: #A7EEE4;
+	margin-bottom: 0.5em;
+    text-align: left;
+    margin: 0.5em;
+    padding: 0.5em;
+}    
+    
+} 
+
 /* Medium width screen */
 @media (min-width: 401px) and (max-width: 800px) {
-	footer > p#resolution {
-		/* background-image: url(../images/amber.png); */
-		background-size: contain;
-	}
-    input[type="text"], input[type="email"], input[type="password"], textarea {
-	font-size: 0.5em;
+	
+    
+footer > p#resolution {
+    /* background-image: url(../images/amber.png); */
+    background-size: contain;
+}
+    
+input[type="text"], input[type="email"], input[type="password"], textarea {
+	font-size: 1em;
     width: 90%;
 	border: 1px solid black ;
 	padding: 0.5em;
 	margin-top: 0.3em;
-}}
+}
+
+header {
+	width: auto;
+	background-color: #A7EEE4;
+    height: 5em;
+}   
+
+header h1 {
+    text-align: center;
+    color: black;
+    font-size: 2em; 
+}
+
+    nav > ul {
+        height: 2.5em;
+        font-size: 1em;
+    }
+     
+article > section {
+  background-color: white;
+  text-align: left;
+  padding: 0.5em;
+  font-size: 1em;
+}
+    
+ article {
+	background-color: #A7EEE4;
+	margin-bottom: 0.5em;
+    text-align: left;
+    margin: 0.5em;
+    padding: 0.5em;
+}   
+    
+}
 
 /* Wide screen */
 @media (min-width: 801px) {
@@ -475,4 +576,7 @@ footer > p#location {
 		/* background-image: url(../images/green.png); */
 		background-size: contain;
 	}
+    
 }
+
+

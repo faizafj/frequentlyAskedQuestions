@@ -13,13 +13,19 @@ export async function setup() { /* Checks to see if the username has been stored
     var d = new Date();
     var dates =  d.getHours()
     if(dates >= 0 && dates < 12) { //less than 12
-          document.querySelector('h2').innerText = `Good Morning ${username}!`
+          document.querySelector('main > p').innerText = `Good Morning ${username}!`
     } else if (dates >= 12 && dates <= 17) {
-         document.querySelector('h2').innerText = `Good Afternoon ${username}!`
+         document.querySelector('main > p').innerText = `Good Afternoon ${username}!`
     } else {
-        document.querySelector('h2').innerText = `Good Evening ${username}!`}
+        document.querySelector('main > p').innerText = `Good Evening ${username}!`}
      await showQuestions (username)
+    document.body.style.backgroundImage = "url('uploads/backgroundDesign.png')"
+    document.body.style.backgroundSize = "50%"
+        document.header.style.backgroundImage = "url('uploads/headerImage.png')"
+    document.header.style.backgroundSize = "50%"
 }
+
+
 
 async function showQuestions(username){
     console.log (`username: ${username}`)
@@ -40,12 +46,15 @@ async function showQuestions(username){
         const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-        content += `<tr> <td> <center> <img src="/uploads/${img}" /> </center> <br>
-        Title: ${question.title}  
-        <br> Summary: ${question.summary} 
-            <center> <a href=/#details-id=${question.questionId} id="qDetails"> Click to view Question </a> </center> 
-            <br>  Date Posted: ${dateString} Posted By: ${question.userid} </td> </tr>`
-    })
+        const username = question.userid
+        content += `<article>    
+        <section> 
+        <h2> Question: ${question.title}  </h2>  <br>
+        <center> <img src="/uploads/${img}" />  </center> <br>
+        <br> Summary: ${question.summary}  <br>
+        <br> <a href=/#details-id=${question.questionId} id="qDetails"> Click to view </a>  <br>
+        <br> <p> Date Posted: ${dateString} <br> Posted By: ${username} </p> </section> </article>`
+    }) //use grid instead article, sections in the article styled as table grid rows  4 rows 
     
-    document.querySelector('figure > table').innerHTML = content
+    document.querySelector('main > article').innerHTML = content
 }

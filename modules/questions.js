@@ -14,6 +14,7 @@ export async function add(data) {
     }
    delete data.avatar
    data.questionId = await addQuestionDetails(data)
+    console.log('this is data:')
    console.log(data)
 }
 
@@ -23,7 +24,7 @@ function saveImage(data) {
     return photoName
 }
 
-async function addQuestionDetails (data){
+async function addQuestionDetails(data){
     console.log('HELLO')
     console.log(data)
     let sql = `SELECT id FROM accounts WHERE user = "${data.user}"`
@@ -45,23 +46,30 @@ async function addQuestionDetails (data){
 //gets user id and other needed data
 export async function getAll(username) {
     const userid = await getUserID(username)
-    const sql = `SELECT title, summary, image, dateCreated, questionId, userid FROM questions WHERE userid = ${userid}` //retrieve records
+    const sql = `SELECT title, summary, image, dateCreated, questionId, userid FROM questions` //retrieve records
     const result = await db.query(sql)
     console.log('Helllo!!!!!!!!!!!!!!!!!!!!!!!!')
     console.log(result)
     return result
 }
 
+
 async function getUserID(username) {
     const sql = `SELECT id FROM accounts WHERE user = "${username}"`
     console.log(sql)
     let result = await db.query(sql)
     const userid = result[0].id
+    console.log('Hellloooo')
+    console.log (userid)
     return userid
 }
 
+
+
 export async function getDetails (questionId){
-    const sql = `SELECT title, summary, image, dateCreated, description, userid FROM questions WHERE questionId = ${questionId}`
+    const sql = `SELECT questions.title, questions.summary, 
+            questions.image, questions.dateCreated, questions.description, 
+            questions.userid, accounts.user FROM questions JOIN accounts ON questions.userid = accounts.id WHERE questionId = ${questionId}`
     const result = await db.query(sql)
     return result
 }

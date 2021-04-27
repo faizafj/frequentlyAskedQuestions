@@ -22,9 +22,9 @@ async function login() {
 	const json = await response.json()
 	if(response.status === 200) {
 		localStorage.setItem('username', json.data.username)
-		localStorage.setItem('Authorization', token)
+		localStorage.setItem('authorization', token)
 		window.location.href = '#home'
-		showMessage(`you are logged in as ${json.data.username}`)
+		showMessage(`You are logged in as: ${json.data.username}`)
 	} else {
 		showMessage('invalid username or password')
 		document.querySelector('input[name="pass"]').value = ''

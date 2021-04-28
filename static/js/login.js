@@ -13,7 +13,7 @@ async function login() {
 	event.preventDefault()
 	console.log('form submitted')
 	const token = getToken()
-	const url = '/accounts'
+	const url = '/api/v1.3/accounts'
 	const options = {
 		method: 'GET',
 		headers: { 'Authorization': token }

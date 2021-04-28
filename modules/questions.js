@@ -44,7 +44,9 @@ async function addQuestionDetails(data){
 
 //gets user id and other needed data
 export async function getAll() {
-    const sql = `SELECT questions.title, questions.summary, questions.image, questions.dateCreated, questions.questionId, questions.userid, accounts.user FROM questions JOIN accounts ON questions.userid = accounts.id` //retrieve records
+    const sql = `SELECT questions.title, questions.summary,\ questions.image, questions.dateCreated,
+    \ questions.questionId, questions.userid, \
+    accounts.user FROM questions JOIN accounts ON questions.userid = accounts.id` //retrieve records
     const result = await db.query(sql)
     console.log(result)
     return result

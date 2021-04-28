@@ -28,7 +28,7 @@ export async function setup() { /* Checks to see if the username has been stored
 async function showQuestions(username){
     console.log (`username: ${username}`)
     const baseURL = getURL()
-    const url = `${baseURL}/questions`
+    const url = `${baseURL}/api/v1.3/questions`
     const options = {
         method: 'GET',
         headers: {

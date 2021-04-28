@@ -14,7 +14,7 @@ router.get('/', async context => {
 	context.response.body = data
 })
 
-router.get('/accounts', async context => {
+router.get('/api/v1.3/accounts', async context => {
 	console.log('GET /accounts')
 	const token = context.request.headers.get('Authorization')
 	console.log(`auth: ${token}`)
@@ -31,7 +31,7 @@ router.get('/accounts', async context => {
 	}
 })
 
-router.post('/accounts', async context => {
+router.post('/api/v1.3/accounts', async context => {
 	console.log('POST /accounts')
 	const body  = await context.request.body()
 	const data = await body.value
@@ -47,7 +47,7 @@ router.post('/accounts', async context => {
 })
 
 
-router.post ('/questions', async context => {
+router.post ('/api/v1.3/questions', async context => {
     console.log('POST /questions')
     let user = null
     try {
@@ -74,12 +74,12 @@ router.post ('/questions', async context => {
     return 
 }
     context.response.status = 201
-    context.response.body = JSON.stringify(context.response.body = { status: 'added', msg: 'New contact added'}, null, 2)
+    context.response.body = JSON.stringify(context.response.body = { status: 'added', msg: 'The question has been added'}, null, 2)
 })
 
 
 //get questions
-router.get ('/questions', async context => {
+router.get ('/api/v1.3/questions', async context => {
     console.log('GET /questions')
   try { 
         const questions = await getAll()
@@ -91,7 +91,7 @@ router.get ('/questions', async context => {
 })
 
 
-router.get ('/questions/:id', async context => {
+router.get ('/api/v1.3/questions/:id', async context => {
     console.log('GET /questions')
     let user = null //set null to run try/catch
     try {
@@ -114,7 +114,7 @@ router.get ('/questions/:id', async context => {
 }
 })
 
-router.post ('/files', async context => {
+router.post ('/api/v1.3/files', async context => {
     console.log('POST /files')
     try {
         const token = context.request.headers.get('Authorization')

@@ -20,7 +20,7 @@ export async function setup(route, querystring) { /* Checks to see if the userna
 async function showQuestions(username, querystring){
     console.log (`username: ${username}`)
     const baseURL = getURL()
-    const url = `${baseURL}/questions/${querystring.id}`
+    const url = `${baseURL}/api/v1.3/questions/${querystring.id}`
     const options = {
         method: 'GET',
         headers: {

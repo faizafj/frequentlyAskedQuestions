@@ -48,7 +48,7 @@ async function addQuestion(event) {
     } console.log (formData)
      //post the questions data
     const baseURL = getURL()
-    const url = `${baseURL}/questions`
+    const url = `${baseURL}/api/v1.3/questions`
     const options = {
     method:'POST',
     headers: {

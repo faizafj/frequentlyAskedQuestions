@@ -14,10 +14,10 @@ const connectionData = {
     db: 'website'
   },
   '/app': {
-		hostname: 'HOSTNAME',
-    username: 'USERNAME',
-    password: 'PASSWORD',
-    db: 'DATABASE'
+		hostname: 'bd82fafd1e00cf',
+    username: 'bd82fafd1e00cf',
+    password: '3c672e99',
+    db: 'heroku_a6ec54025ffc4f8'
   }
 }
 

@@ -7,7 +7,7 @@ CREATE TABLE `accounts` (
 CREATE TABLE `questions` (
   `questionId` mediumint PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `userid` mediumint,
-  `title` varchar(60),
+  `title` varchar(100),
   `summary` varchar(200),
   `description` varchar(1500),
   `image` varchar(50),

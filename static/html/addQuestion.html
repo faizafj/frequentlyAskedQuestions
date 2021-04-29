@@ -4,7 +4,7 @@
 <form action="/addQuestion" method="post" enctype="mulitpart/form-data">
     <p>
     <label for="title">The Question Title:</label> <br>   
-    <input type="text" name="title" placeholder="Type your question title here" value="" autofocus required>
+    <input type="text" name="title" placeholder="Type your question title here" value="" autofocus >
     </p> 
     <p>
         <br>  <center> <img src="uploads/image.png" /> </center> <br> 
@@ -20,12 +20,12 @@
     
       <form method="get"> Please describe the question in detail: <br>
           <label class="description">
-      <textarea name="description" rows="10" cols="30" autofocus required></textarea>
+      <textarea name="description" rows="10" cols="30" autofocus ></textarea>
           </label>
  
        <p>
         <label for="topic" > Pick a topic: <br>
-      <select name="topic" required>
+      <select name="topic" >
         <option value="">--choose--</option>
         <option value="HTML">HTML</option>
         <option value="CSS">CSS</option>
@@ -37,7 +37,7 @@
       
        <p>
         <label for="subtopic" > Pick a subtopic: <br>
-      <select name="subtopic" required>
+      <select name="subtopic" >
         <option value="">--choose--</option>
         <option value="JavaScript">JavaScript</option>
         <option value="CSS Styling">CSS Styling</option> 

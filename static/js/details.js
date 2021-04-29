@@ -42,7 +42,7 @@ async function showQuestions(username, querystring){
         content += ` <article id="details"> <section> Question: ${question.title}</section> 
         <section id= "1"> <center> <img src="/uploads/${img}" /> </center> </section>
         <section id="2"> ${descriptionFormat} </section> 
-        <section id="3"> Date Posted: ${dateString}  <br> Posted By: ${question.user}</section> </article>`
+        <section id="3"> Date Posted: ${dateString}  <br> Posted By: ${question.user}</section>  </article>`
     })
     
     document.querySelector('main > article').innerHTML = content

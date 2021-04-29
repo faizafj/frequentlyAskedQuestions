@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS `questions`;
 CREATE TABLE `questions` (
   `questionId` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `userid` mediumint(8) unsigned DEFAULT NULL,
-  `title` varchar(60) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `summary` varchar(200) DEFAULT NULL,
   `description` varchar(1500) DEFAULT NULL,
   `image` varchar(30) DEFAULT NULL,

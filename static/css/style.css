@@ -9,6 +9,13 @@ body, p, h1, h2, h3, ul {
 }
 
 
+h1 {
+    color: black;
+    margin-bottom: 0.5px;
+    text-align: center;
+}
+
+
 input#submitQuestion {
     width: 10em;
     background: white;
@@ -31,11 +38,7 @@ header h1 {
 }
 
 
-h1 {
-	margin-bottom: 0.5em;
-	font-size: 1.6em;
-	color: #555;
-}
+
 
 img {
     height: 15em; 
@@ -204,6 +207,7 @@ button:hover {
       color: #A7EEE4;
       background-color: black;
       border: none;
+        cursor: pointer;
 }
 
 input[type="text"], input[type="email"], input[type="password"], textarea {
@@ -243,6 +247,7 @@ main > button:hover {
     background: black;
     border: none;
     text-decoration: none;
+    cursor: pointer;
 }
 
 form {
@@ -271,6 +276,7 @@ main > section h2 {
 
 main > section button {
 	float: right;
+    
 }
 
 
@@ -306,6 +312,7 @@ article > p {
 	height: 2em;
 	flex-grow: 2;
 }
+
 
 article > button {
 	margin: 0;
@@ -343,6 +350,28 @@ section > p {
 section > img {
     text-align:center;
      display:block;
+}
+
+
+section > ul {
+	display: inline-block;
+	text-align: left;
+	font-size: 1em;
+    background: none;
+} 
+
+section > li {
+       background: none;
+       list-style-type: circle;
+
+}
+
+section h1, h2, h3 {
+    font-weight:normal
+}
+
+section > button > a {
+    color: white;
 }
 
 h2#welcome {

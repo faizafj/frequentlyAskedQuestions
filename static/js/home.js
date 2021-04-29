@@ -50,7 +50,8 @@ async function showQuestions(username){
         <h2> Question: ${question.title}  </h2>  <br>
         <center> <img src="/uploads/${img}" />  </center> <br>
         <br> Summary: ${question.summary}  <br>
-        <br> <a href=/#details-id=${question.questionId} id="qDetails"> Click to view </a>  <br>
+        <br> <a href=/#details-id=${question.questionId} id="qDetails"> Click to view </a>  
+        <br>
         <br> <p> Date Posted: ${dateString} <br> Posted By: ${question.user} </p> </section> </article>`
     }) //use grid instead article, sections in the article styled as table grid rows  4 rows 
     

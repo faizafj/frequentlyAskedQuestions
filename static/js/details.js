@@ -32,17 +32,17 @@ async function showQuestions(username, querystring){
     const json = await response.json()
     console.log(json)
     let content = '' 
-    const conv = new showdown.Converter()
+    const converter = new showdown.Converter()
     json.data.forEach(question => {
-        let descriptionFormat = conv.makeHtml(question.description)
-        descriptionFormat = descriptionFormat.replace(/^<p>|<\/p>$/g,  '') 
+        let descriptionFormat = converter.makeHtml(question.description)
+        descriptionFormat = descriptionFormat.replace (/^<p>|<\/p>$/g,  '')
         const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
         content += ` <article id="details"> <section> Question: ${question.title}</section> 
-        <section id= "1"> <center> <img src="/uploads/${img}" /> </center> </section>
-        <section id="2"> ${descriptionFormat} </section> 
-        <section id="3"> Date Posted: ${dateString}  <br> Posted By: ${question.user}</section> </article>`
+        <section> <center> <img src="/uploads/${img}" /> </center> </section>
+        <section> ${descriptionFormat} </section> 
+        <section> Date Posted: ${dateString}  <br> Posted By: ${question.user}</section> </article>`
     })
     
     document.querySelector('main > article').innerHTML = content

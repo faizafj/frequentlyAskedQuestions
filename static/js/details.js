@@ -36,7 +36,7 @@ async function showQuestions(username, querystring){
     json.data.forEach(question => {
         let descriptionFormat = converter.makeHtml(question.description)
         descriptionFormat = descriptionFormat.replace (/^<p>|<\/p>$/g,  '')
-        const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
+        const img = question.image ? question.image: 'placeholderImage.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
         content += ` <article id="details"> <section> <h1> Question: ${question.title} </h1> </section> 

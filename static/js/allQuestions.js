@@ -17,7 +17,6 @@ export async function setup() { /* Checks to see if the username has been stored
 
 
 async function showQuestions(username){
-    console.log (`username: ${username}`)
     const baseURL = getURL()
     const url = `${baseURL}/api/v1.3/questions`
     const options = {
@@ -32,7 +31,7 @@ async function showQuestions(username){
     console.log(json)
     let content = ''
     json.data.forEach(question => {
-        const img = question.image ? question.image: 'placeholder.png' //if no image a default image added
+        const img = question.image ? question.image: 'placeholderImage.png' //if no image a default image added
         const date = new Date(question.dateCreated)
         const dateString = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
         const username = question.userid

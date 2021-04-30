@@ -4,7 +4,7 @@
 <form action="/addQuestion" method="post" enctype="mulitpart/form-data">
     <p>
     <label for="title">The Question Title:</label> <br>   
-    <input type="text" name="title" placeholder="Type your question title here" value="" autofocus >
+    <input type="text" name="title" placeholder="Type your question title here" value="" autofocus required >
     </p> 
     <p>
         <br>  <center> <img src="uploads/image.png" /> </center> <br> 
@@ -14,30 +14,32 @@
   
       <form method="get"> Brief Summary of the Question: <br>
           <label class="summary">
-      <textarea name="summary" rows="3" cols="30" maxlength="200" autofocus ></textarea>
+      <textarea name="summary" rows="3" cols="30" maxlength="200" autofocus required></textarea>
           </label>    
     <br>
     
       <form method="get"> Please describe the question in detail: <br>
           <label class="description">
-      <textarea name="description" rows="10" cols="30" autofocus ></textarea>
+      <textarea name="description" rows="10" cols="30" autofocus  required></textarea>
           </label>
  
        <p>
         <label for="topic" > Pick a topic: <br>
-      <select name="topic" >
+      <select name="topic" required >
         <option value="">--choose--</option>
         <option value="HTML">HTML</option>
         <option value="CSS">CSS</option>
         <option value="JavaScript">JavaScript</option>
-        <option value="GitHub">GitHub</option>                   
+        <option value="GitHub">GitHub</option>  
+        <option value="Codio">Codio</option>  
+          <option value="Other">Other</option>  
       </select>
     </label>
     </p>
       
        <p>
         <label for="subtopic" > Pick a subtopic: <br>
-      <select name="subtopic" >
+      <select name="subtopic" required>
         <option value="">--choose--</option>
         <option value="JavaScript">JavaScript</option>
         <option value="CSS Styling">CSS Styling</option> 
@@ -46,6 +48,8 @@
         <option value="GitHub Commits">GitHub Commiting</option>   
         <option value="GitHub Requests">GitHub Requests (Pull/Push)</option>     
        <option value="GitHub Commands">GitHub Commands</option>  
+          <option value="Codio">Codio</option>  
+          <option value="Other">Other</option>  
       </select>
     </label>
     </p>
